@@ -15,11 +15,14 @@ const CategoryCard = ({ category }: CategoryCardProps) => {
   const media = category.media as Media
   const { setCategoryFilters } = useFilter()
 
+  // Check if media object and url property are not null before accessing them
+  const backgroundImageStyle = media && media.url ? { backgroundImage: `url(${media.url})` } : {}
+
   return (
     <Link
       href="/products"
       className={classes.card}
-      style={{ backgroundImage: `url(${media.url})` }}
+      style={backgroundImageStyle}
       onClick={() => setCategoryFilters([category.id])}
     >
       <p className={classes.title}>{category.title}</p>
