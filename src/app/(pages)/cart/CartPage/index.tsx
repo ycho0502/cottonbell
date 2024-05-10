@@ -108,7 +108,7 @@ export const CartPage: React.FC<{
 
                 <Button
                   className={classes.checkoutButton}
-                  href={user ? '/' : '/'}
+                  href={user ? '/contact-us' : '/contact-us'}
                   label={user ? 'Checkout' : 'Checkout'}
                   appearance="primary"
                 />
